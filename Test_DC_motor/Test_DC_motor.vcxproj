@@ -19,13 +19,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset></PlatformToolset>
+    <PlatformToolset>
+    </PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset></PlatformToolset>
+    <PlatformToolset>
+    </PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -45,10 +47,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Arduino\libraries\Adafruit-Motor-Shield-library-master;D:\Arduino\libraries\Adafruit-Motor-Shield-library-master\utility;D:\Arduino\libraries;D:\Arduino\hardware\arduino\avr\libraries;D:\VS2015EN\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\mjckvxe1.c0z\Micro Platforms\default\debuggers;E:\Arduino_sketches\libraries;D:\Arduino\hardware\arduino\avr\cores\arduino;D:\Arduino\hardware\arduino\avr\variants\mega;E:\visual_workspace\Projects\Test_DC_motor\Test_DC_motor;D:\Arduino\hardware\tools\avr/avr/include/;D:\Arduino\hardware\tools\avr//avr/include/avr/;D:\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>E:\visual_workspace\Projects\Test_DC_motor\Test_DC_motor\__vm\.Test_DC_motor.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>__AVR_ATmega2560__;F_CPU=16000000L;ARDUINO=10608;ARDUINO_AVR_MEGA2560;ARDUINO_ARCH_AVR;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -73,9 +75,9 @@
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
-  
   <ItemGroup>
     <ClInclude Include="src\_micro-api\libraries\Test_DC_motorLib\src\Test_DC_motorLib.h" />
+    <ClInclude Include="__vm\.Test_DC_motor.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\_micro-api\libraries\Test_DC_motorLib\src\Test_DC_motorLib.cpp" />
@@ -83,9 +85,7 @@
   <ItemGroup>
     <None Include="src\_micro-api\libraries\Test_DC_motorLib\library.properties" />
   </ItemGroup>
-  
-  
-   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>

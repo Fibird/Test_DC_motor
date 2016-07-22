@@ -1,7 +1,7 @@
 /*
  Name:		Test_DC_motorLib.h
  Created:	7/22/2016 8:56:52 PM
- Author:	bird
+ Author:	Chaoyang Liu
  Editor:	http://www.visualmicro.com
 */
 
