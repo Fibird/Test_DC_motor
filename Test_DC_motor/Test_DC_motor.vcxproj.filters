@@ -17,6 +17,7 @@
   <ItemGroup>
     <None Include="Test_DC_motor.ino" />
     <None Include="src\_micro-api\libraries\Test_DC_motorLib\library.properties" />
+    <None Include="motor_driver.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\_micro-api\libraries\Test_DC_motorLib\src\Test_DC_motorLib.cpp">
@@ -28,6 +29,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="__vm\.Test_DC_motor.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="motor_driver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

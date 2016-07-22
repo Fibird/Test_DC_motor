@@ -6,13 +6,6 @@
 */
 
 #include "Test_DC_motorLib.h"
-#include <Adafruit-Motor-Shield-library-master\AFMotor.h>
-
-AF_DCMotor rightFront(1);
-AF_DCMotor leftFront(2);
-AF_DCMotor rightBack(3);
-AF_DCMotor leftBack(4);
-
 
 char incoming_chr;
 char cmd;

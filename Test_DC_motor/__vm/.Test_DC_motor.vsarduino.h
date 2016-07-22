@@ -52,4 +52,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <Test_DC_motor.ino>
 #include <src\_micro-api\libraries\Test_DC_motorLib\src\Test_DC_motorLib.cpp>
 #include <src\_micro-api\libraries\Test_DC_motorLib\src\Test_DC_motorLib.h>
+#include <motor_driver.h>
+#include <motor_driver.ino>
 #endif
