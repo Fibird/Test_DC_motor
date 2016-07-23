@@ -58,6 +58,12 @@ int runCommand() {
 		case ALLWHEELS:
 			setMotorSpeeds(arg1, arg2, arg3, arg4);
 			break;
+		case STOPWHEEL:
+			stopMotor(arg1);
+			break;
+		case STOPWHEELS:
+			stopMotors();
+			break;
 		default:
 			Serial.println(F("Invalid Command"));
 			break;
@@ -104,6 +110,7 @@ void loop() {
 			if (arg == 0) {
 				// the first arg is the number of wheels
 				cmd = incoming_chr;
+				//Serial.println("get it!");
 			}
 			else if (arg == 1) {
 				argv1[index] = incoming_chr;
