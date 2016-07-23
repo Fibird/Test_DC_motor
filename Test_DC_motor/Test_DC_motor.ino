@@ -7,7 +7,7 @@
 #include "command.h"
 
 char incoming_chr;
-byte num_cmd;
+char cmd;
 byte index = 0;
 byte arg = 0;
 char argv1[16];
@@ -22,7 +22,7 @@ long arg4;
 
 /* Clear the current command parameters */
 void resetCommand() {
-	num_cmd = 0;
+	cmd = 0;
 	memset(argv1, 0, sizeof(argv1));
 	memset(argv2, 0, sizeof(argv2));
 	memset(argv3, 0, sizeof(argv3));
@@ -42,18 +42,18 @@ int runCommand() {
   arg3 = atoi(argv3);
   arg4 = atoi(argv4);
 
-	switch (num_cmd) {
-		case FLEFT:
-			setMotorSpeed(FLEFT, arg1);
+	switch (cmd) {
+		case FRONTLEFT:
+			setMotorSpeed(0, arg1);
 			break;
-		case FRIGHT:
-			setMotorSpeed(FRIGHT, arg1);
+		case FRONTRIGHT:
+			setMotorSpeed(1, arg1);
 			break;
-		case BLEFT:
-			setMotorSpeed(BLEFT, arg1);
+		case BACKLEFT:
+			setMotorSpeed(2, arg1);
 			break;
-		case BRIGHT:
-			setMotorSpeed(BRIGHT, arg1);
+		case BACKRIGHT:
+			setMotorSpeed(3, arg1);
 			break;
 		case ALLWHEELS:
 			setMotorSpeeds(arg1, arg2, arg3, arg4);
@@ -66,7 +66,6 @@ int runCommand() {
 // the setup function runs once when you press reset or power the board
 void setup() {
 	Serial.begin(57600);
-
 }
 
 // the loop function runs over and over again until power down or reset
@@ -104,7 +103,7 @@ void loop() {
 		else {
 			if (arg == 0) {
 				// the first arg is the number of wheels
-				num_cmd = incoming_chr - 48;
+				cmd = incoming_chr;
 			}
 			else if (arg == 1) {
 				argv1[index] = incoming_chr;
