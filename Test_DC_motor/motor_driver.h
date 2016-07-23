@@ -1,14 +1,10 @@
-#include <Adafruit-Motor-Shield-library-master\AFMotor.h>
+/*
+Name:		motor_driver.h
+Created:	7/22/2016 8:56:52 PM
+Author:	Chaoyang Liu
+*/
 
-#define FLEFT           0
-#define FRIGHT          1
-#define BLEFT			2
-#define BRIGHT			3
-
-AF_DCMotor rightFront(1);
-AF_DCMotor leftFront(2);
-AF_DCMotor rightBack(3);
-AF_DCMotor leftBack(4);
+#include <AFMotor.h>
 
 void setMotorSpeed(int i, int spd);
 void setMotorSpeeds(int fleftSpeed, int frightSpeed, int bleftSpeed, int brightSpeed);
