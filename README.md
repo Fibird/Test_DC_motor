@@ -31,3 +31,5 @@
 另外，GND、5V引脚必须也要连接，否则的话就无法稳定地控制直流电动机。
 
 具体接线图如下所示：
+
+![circuit](https://github.com/Sunlcy/Test_DC_motor/blob/master/Test_DC_motor/circuit_diagram/L293D_bb.png)
