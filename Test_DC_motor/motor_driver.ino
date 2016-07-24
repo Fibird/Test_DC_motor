@@ -90,5 +90,5 @@ void stopMotors() {
 	leftFront.run(RELEASE);
 	leftBack.run(RELEASE);
 	rightFront.run(RELEASE);
-	leftBack.run(RELEASE);
+	rightBack.run(RELEASE);
 }
