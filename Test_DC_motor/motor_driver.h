@@ -6,10 +6,10 @@ Author:	Chaoyang Liu
 
 #include <AFMotor.h>
 
-#define FLEFT           0
-#define FRIGHT          1
-#define BLEFT			      2
-#define BRIGHT			    3
+#define FLEFT           1
+#define FRIGHT          0
+#define BLEFT			      3
+#define BRIGHT			    2
 
 void setMotorSpeed(int i, int spd);
 void stopMotor(int i);
