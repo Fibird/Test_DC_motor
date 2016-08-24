@@ -34,6 +34,8 @@
 
 ![circuit](https://github.com/Sunlcy/Test_DC_motor/blob/master/Test_DC_motor/circuit_diagram/L293D_bb.png)
 
+**NOTE:**原图在项目的circuit_diagram文件夹下。
+
 # 使用手册
 
 ##　速度控制
@@ -78,7 +80,7 @@
 #define FRONTRIGHT      'r'
 #define BACKLEFT        'L'
 #define BACKRIGHT       'R'
-#define ALLWHEELS				'A'
+#define ALLWHEELS		'A'
 #define STOPWHEEL       's'
 #define STOPWHEELS      'S'
 ```
