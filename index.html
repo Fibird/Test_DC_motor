@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Test DC motors by Sunlcy</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Test DC motors</h1>
+        <h2>This codes is to test my DC Motors which are controlled by L293D.</h2>
+        <a href="https://github.com/Sunlcy/Test_DC_motor" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="概述" class="anchor" href="#%E6%A6%82%E8%BF%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>概述</h1>
+
+<p>该程序可以对直流电动机进行简单的控制，包括速度调节、方向控制等。通过该程序，你也可以确定电动机的正负极。</p>
+
+<h1>
+<a id="硬件" class="anchor" href="#%E7%A1%AC%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>硬件</h1>
+
+<p>我使用的硬件如下：</p>
+
+<ul>
+<li>L293D 4WD驱动板</li>
+<li>直流减速电动机4个(12V, 366rpm)</li>
+<li>Arduino Mega 2560</li>
+<li>杜邦线若干</li>
+</ul>
+
+<h1>
+<a id="引脚连接" class="anchor" href="#%E5%BC%95%E8%84%9A%E8%BF%9E%E6%8E%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>引脚连接</h1>
+
+<p>将电机驱动板L293D和Arduino板的相应接口(数字一一对应)通过杜邦线连接起来，具体针脚连接方式如下：</p>
+
+<p>如果只想使用直流/步进电机应该连接以下引脚：</p>
+
+<ul>
+<li>数字端口11：直流电机#1/步进#1（PWM）</li>
+<li>数字端口 3：直流电机#2/步进#1（PWM）</li>
+<li>数字端口 5：直流电机#3/步进#2（PWM）</li>
+<li>数字端口 6：直流电机#4/步进#2（PWM）</li>
+</ul>
+
+<p>如果要控制直流/步进电机应该增加以下引脚：</p>
+
+<ul>
+<li>数字引脚4：DIR CLK触发</li>
+<li>数字引脚7：DIR EN指令的允许端EN</li>
+<li>数字引脚8：DIR SER</li>
+<li>数字引脚12：DIR ATCH中断连接</li>
+</ul>
+
+<p>另外，GND、5V引脚必须也要连接，否则的话就无法稳定地控制直流电动机。</p>
+
+<p>具体接线图如下所示：</p>
+
+<p><img src="https://github.com/Sunlcy/Test_DC_motor/blob/master/Test_DC_motor/circuit_diagram/L293D_bb.png" alt="circuit"></p>
+
+<h1>
+<a id="使用手册" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用手册</h1>
+
+<h2>
+<a id="速度控制" class="anchor" href="#%E9%80%9F%E5%BA%A6%E6%8E%A7%E5%88%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>　速度控制</h2>
+
+<p>对单个电动机控制：</p>
+
+<pre><code>ｒ　100
+</code></pre>
+
+<p>其中命令ｒ代表设置右前轮速度，参数100为速度大小。</p>
+
+<p>下表是了列举了各命令代表的含义：</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">编号</th>
+<th align="center">命令</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">l</td>
+<td align="center">设置左前轮</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">r</td>
+<td align="center">设置右前轮</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">L</td>
+<td align="center">设置左后轮</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">R</td>
+<td align="center">设置右后轮</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">A</td>
+<td align="center">设置所有车轮</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>NOTE:</strong> 我想你大概也会猜到，与其他命令不同的是命令A的参数为4个，分别为左前轮速度、右前轮速度、左后轮速度、右后轮速度。</p>
+
+<h2>
+<a id="方向" class="anchor" href="#%E6%96%B9%E5%90%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>方向</h2>
+
+<p>只要将参数设置为负值，即可改变电动机旋转方向。</p>
+
+<h2>
+<a id="停止" class="anchor" href="#%E5%81%9C%E6%AD%A2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>停止</h2>
+
+<p>如果你想终止电动机转动，可以使用命令<code>s</code>或者<code>S</code>：</p>
+
+<pre><code>s 0     # 终止左前轮
+S       # 终止所有车轮
+</code></pre>
+
+<p>命令非常好理解，通过车轮对应的编号即可终止相应的车轮。</p>
+
+<p><strong>NOTE:</strong>当然，将速度设置为0也可以达到相同的效果。</p>
+
+<p>具体可以查看程序中的<code>command.h</code>文件:</p>
+
+<pre><code>#define FRONTLEFT       'l'
+#define FRONTRIGHT      'r'
+#define BACKLEFT        'L'
+#define BACKRIGHT       'R'
+#define ALLWHEELS               'A'
+#define STOPWHEEL       's'
+#define STOPWHEELS      'S'
+</code></pre>
+
+<h1>
+<a id="注意" class="anchor" href="#%E6%B3%A8%E6%84%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>注意</h1>
+
+<ul>
+<li>要给L293D单独供电，不要将电源接在Arduino上；</li>
+<li>给L293D通电时，电源正负极千万不要接反，否则很容易烧毁板子；</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Sunlcy/Test_DC_motor/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Sunlcy/Test_DC_motor/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Sunlcy/Test_DC_motor"></a> is maintained by <a href="https://github.com/Sunlcy">Sunlcy</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
