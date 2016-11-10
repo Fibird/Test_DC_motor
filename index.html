@@ -34,7 +34,7 @@
 <p>该程序可以对直流电动机进行简单的控制，包括速度调节、方向控制等。通过该程序，你也可以确定电动机的正负极。</p>
 
 <h1>
-<a id="硬件" class="anchor" href="#%E7%A1%AC%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>硬件</h1>
+<a id="硬件要求" class="anchor" href="#%E7%A1%AC%E4%BB%B6%E8%A6%81%E6%B1%82" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>硬件要求</h1>
 
 <p>我使用的硬件如下：</p>
 
@@ -70,9 +70,9 @@
 
 <p>另外，GND、5V引脚必须也要连接，否则的话就无法稳定地控制直流电动机。</p>
 
-<p>具体接线图如下所示：</p>
+<p>具体接线图如下所示(若图片加载不出来，可在项目的circuit_diagram文件夹下查看原图)：</p>
 
-<p><img src="https://github.com/Sunlcy/Test_DC_motor/blob/master/Test_DC_motor/circuit_diagram/L293D_bb.png" alt="circuit"></p>
+<p><img src="Test_DC_motorcircuit_diagramL293D_bb.png" alt="circuit"></p>
 
 <h1>
 <a id="使用手册" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用手册</h1>
@@ -152,7 +152,7 @@ S       # 终止所有车轮
 #define FRONTRIGHT      'r'
 #define BACKLEFT        'L'
 #define BACKRIGHT       'R'
-#define ALLWHEELS               'A'
+#define ALLWHEELS       'A'
 #define STOPWHEEL       's'
 #define STOPWHEELS      'S'
 </code></pre>
