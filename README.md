@@ -32,7 +32,7 @@
 
 具体接线图如下所示：
 
-![circuit](https://github.com/Sunlcy/Test_DC_motor/blob/master/Test_DC_motor/circuit_diagram/L293D_bb.png)
+![circuit](Test_DC_motor\circuit_diagram\L293D_bb.png)
 
 **NOTE:**原图在项目的circuit_diagram文件夹下。
 
