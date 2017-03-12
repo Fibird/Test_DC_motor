@@ -1,8 +1,6 @@
-/*
-Name:		motor_driver.h
-Created:	7/22/2016 8:56:52 PM
-Author:	Chaoyang Liu
-*/
+/***********************************************************************
+   ultrasonic driver declarations - by Chaoyang Liu
+ ***********************************************************************/
 
 #include <AFMotor.h>
 

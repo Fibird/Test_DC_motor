@@ -1,9 +1,6 @@
-/*
-Name:		motor_driver.ino
-Created:	7/22/2016 8:56:52 PM
-Author:	Chaoyang Liu
-*/
-
+/***********************************************************
+  * Ultrasonic HC-SR04 driver definitions - by Chaoyang Liu
+  ***********************************************************/
 #include "motor_driver.h"
 
 AF_DCMotor rightFront(1);

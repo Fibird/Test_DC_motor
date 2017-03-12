@@ -1,8 +1,15 @@
-/*
- Name:		Test_DC_motor.ino
- Created:	7/22/2016 8:56:52 PM
- Author:	Chaoyang Liu
-*/
+/***********************************************************************
+ * 4WD L293D driver
+ *
+ * Author: Chaoyang Liu
+ * E-main: chaoyanglius@outlook.com
+ *
+ * Inspired and modeled after the Pirobot driver by Patrick Goebel
+ *
+ * Software License Agreement (GPL License)
+ * Copyright (c) 2017, Chaoyang Liu
+ *
+ ************************************************************************/
 #include "motor_driver.h"
 #include "command.h"
 
